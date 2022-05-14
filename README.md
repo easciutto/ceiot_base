@@ -1,6 +1,6 @@
 # CEIOT BASE
 
-Código para ejemplo básico de IoT
+Código para ejemplo básico de IIoT
 
 Lo siguiente se puede hacer en cualquier sistema de virtualización por comodidad y prolijidad o directamente en una máquina real.
 
