@@ -23,7 +23,7 @@
 #include "lwip/netdb.h"
 #include "lwip/dns.h"
 #include "dht.h"
-#include "/home/iot/esp/ceiot_base/config/config.h"   // esto es mejorable...
+#include "/home/eas/esp/ceiot_base/config/config.h"   // esto es mejorable...
 
 /* Constants that aren't configurable in menuconfig */
 #define WEB_SERVER API_IP
