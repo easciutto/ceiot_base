@@ -45,8 +45,9 @@ app.post('/measurement', function (req, res) {
         const myobj = {device_id: req.body.id, key: req.body.key, temperature: req.body.t, humidity: req.body.h, pressure: req.body.p};
         const myjsonvar = JSON.stringify(myobj);
         console.log(myjsonvar);
-    const {insertedId} = insertMeasurement({id:req.body.id, t:req.body.t, h:req.body.h, p:req.body.p});
-	res.send("received measurement into " +  insertedId);
+//    const {insertedId} = insertMeasurement({id:req.body.id, t:req.body.t, h:req.body.h, p:req.body.p});
+//	res.send("received measurement into " +  insertedId);
+        res.send("recieved eas as" + myjsonvar);
 });
 
 app.post('/device', function (req, res) {
