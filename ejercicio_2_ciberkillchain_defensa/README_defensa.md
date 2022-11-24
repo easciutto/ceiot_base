@@ -16,7 +16,8 @@ Desarrolla la defensa en función del ataque planteado en orden inverso
 ### Respuesta al ataque del nodo.
 
 No queda otra opción que ir hasta el sitio y reconfigurarlo con el template correcto. Restablezco la frecuencia de reporte a 1 hora.
-También procedo a cambiar la contraseña por default del usuario admin, y habilitar el usuario operador restringiendo su alcance sólo a visualizar los valores de las entradas digitales y analógicas y visualización de la configuración, sin permisos de edición.
+También procedo a cambiar la contraseña por default del usuario admin, y habilitar el usuario "operador" restringiendo su alcance sólo a visualizar los valores de las entradas digitales y analógicas y a la visualización de la configuración, sin permisos de modificación.
+Preventivamente, aunque es muy improbable que fuese descubierta, se procede a la desafectación y creación de una nueva AppKey de LoRaWAN para el nodo y se realiza un rejoin a la red. De ésta manera dificulto cualquier intento de clonar un nodo en mi red.
 
 ### Respuesta al ataque del NS On Premise LoRaWAN
 
@@ -26,9 +27,22 @@ El servidor debe conectarse a una subred segura de servidores. No debe ser acces
 Reviso la configuración de acceso en el firewall y dejo sólo permitidos los orígenes y puertos estrictamente necesarios. 
 Reviso los usuarios con rol de administrador. Procedo a revisar el log de login y actividad. Intento detectar cual fue el usuario hackeado. Reestablezco igualmente todas las contraseñas.
 Implemento una nueva política de seguridad que obligue al cambio de contraseñas como mínimo cada 3 meses y mantengo actualizada la lista de administradores. 
-Luego del análisis y evaluación del ataque, genero una acción en conjunto con el sector de seguridad informática para implementar a la brevedad un software adecuado para detección de anomalías y generación de alertas ante comportamientos fuera de lo común.
+Luego del análisis y evaluación del ataque, genero una acción en conjunto con el sector de seguridad informática para implementar a la brevedad un software adecuado para detección de anomalías y generación de alertas ante comportamientos fuera de lo común de los administradores.
 
 ### Respuesta al ataque al ecosistema en Azure Cloud
 
+Se accede mediante una cuenta de administrador principal y se bloquean todos los demás accesos. Se dejan fuera de servicio todos los componentes de la suscripción. Se revisa y audita la base de datos de históricos y ante la comprobación de estár corrupta se define levantarla desde un backup reciente. La auditoría se hace extensiva a toda la gestión de la suscripción de las ultimas semanas, a fin de recabar toda la información posible sobre el ataque.
+
+Se depuran los usuarios y credenciales de acceso.
+
+Se revisa la configuración de todos los componentes en el grupo de recursos, en especial las políticas y roles para dejar ajustados los permisos de acceso a lo estrictamente necesario.
+
+Se revisa documentación de Microsoft para implementar mejores barreras de protección en la nube https://learn.microsoft.com/en-us/azure/architecture/framework/security/monitor-tools 
+
+Se define implementar el paquete Microsoft Defender for Cloud (en especial para Base de datos, Storage y App Service) a un costo aceptable para la solución https://azure.microsoft.com/es-es/pricing/details/defender-for-cloud/. Para tener un monitoreo continuo, recibir notificaciones de alerta y detectar amenazas de forma temprana. Esto por si solo no nos protege ya que se debe consensuar y aprobar un rol dentro de la empresa que tenga la responsabilidad de monitorear, actuar  y mantener al día ésta herramienta.
+
+Para mitigar futuros intentos de ataque de DDoS desde internet, se evaluará la implementación de Azure DDoS Protection, que brinda protección a los recursos específicos de Azure en una red virtual. https://learn.microsoft.com/es-es/azure/ddos-protection/ddos-protection-reference-architectures
+
+Se define reforzar la capacitación de los usuarios/administradores para tener un correcto manejo de actualizaciones del sistema y crear una conciencia en el uso de las redes y sus herramientas, para evitar ataques de ingeniería social.
 
 
