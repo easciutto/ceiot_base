@@ -56,7 +56,7 @@ También podría encontrarlas al estar guardadas de manera insegura. (Bash histo
 - En una nueva visita al sitio, el atacante descarga la nueva configuración por NFC. Consulta los valores de lo sensores (sin mucho sentido ya que está en el lugar y ve el comportamiento del AIB).
 
 #### NS on Premise y Azure cloud 
-- Se despliega alguna herramienta de ransomware o spyware para seguir recabando información desde dentro.
+- Se despliega un ataque de ransomware mediante una macro incrustada en un email de pishing enviado a un grupo seleccionado de empleados.
 
 ### Explotación
 
@@ -69,7 +69,7 @@ También podría encontrarlas al estar guardadas de manera insegura. (Bash histo
 
 #### NS on Premise y Azure cloud 
 - Manipulación de cuenta. Sin afectar el acceso de la víctima, el atacante modifica roles y permisos de la cuenta para habilitar el movimiento lateral o tener mayores privilegios para llegar a su objetivo. https://attack.mitre.org/techniques/T1098/
-- Se implementa algún servicio adicional que habilite el ingreso por otra vía por si por algún motivo es bloqueado el acceso ilegal utilizado.
+- El atacante escanea la red en busca de una vulnerabilidad para habilitar servicios remotos y control de escritorio remoto de servidores de la red.
 
 ### Command and Control
 

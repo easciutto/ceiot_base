@@ -7,7 +7,7 @@ Eduardo Sciutto
 
 ## Enunciado
 
-Desarrolla la defensa en función del ataque planteado en orden inverso
+Desarrolla la defensa en función del ataque planteado en orden inverso. Considero dos escenarios de ataque. El primero al dispositivo IoT de campo (el nodo), el cual tiene un impacto acotado. El segundo a la infraestructura de servidor de red y a los servicios cloud de la solución, cuyo impacto de daño es mayor.
 
 
 
@@ -26,7 +26,11 @@ Realizo investigaciones que incluyen pruebas forenses como verificar que data fu
 El servidor debe conectarse a una subred segura de servidores. No debe ser accesible desde la red corporativa por cualquier usuario. 
 Reviso la configuración de acceso en el firewall y dejo sólo permitidos los orígenes y puertos estrictamente necesarios. 
 Reviso los usuarios con rol de administrador. Procedo a revisar el log de login y actividad. Intento detectar cual fue el usuario hackeado. Reestablezco igualmente todas las contraseñas.
-Implemento una nueva política de seguridad que obligue al cambio de contraseñas como mínimo cada 3 meses y mantengo actualizada la lista de administradores. 
+
+Detecto el email malicioso con con la macro de randsomware. Identifico el usuario desprevenido que la ejecutó y desde alli busco reconstruir los pasos seguidos por el atacante. Uso de referencia la guía de Kaspersky de tacticas, técnicas y procedimientos para la defensa ante ataques de randsomware. (securelist.com/modern-randsomware-groups-ttps/106824)
+
+Implemento una nueva política de seguridad que obligue al cambio de contraseñas como mínimo cada 3 meses y mantengo actualizada la lista de administradores.
+
 Luego del análisis y evaluación del ataque, genero una acción en conjunto con el sector de seguridad informática para implementar a la brevedad un software adecuado para detección de anomalías y generación de alertas ante comportamientos fuera de lo común de los administradores.
 
 ### Respuesta al ataque al ecosistema en Azure Cloud
