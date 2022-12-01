@@ -35,25 +35,25 @@ El atacante podría actuar sobre el nodo (dispositivo sensor LoRaWAN instalado e
 ### Reconnaissance
 
 #### Nodo:
-- El yacimiento donde se instalan los nodos, es muy vasto y sólo tiene controles de personas en los caminos de acceso principales. No hay videovigilancia en cada AIB. Un intruso no identificado podría acceder a la ubicación del nodo, hacer un relevamiento exhaustivo de su Hw e intentar conectarse por sus interfaces de configuración local (NFC o puerto USB). El software de gestion del nodo se descarga libremente de los Stores de Android e iOS. El firmware está protegido por una contraseña. Podría ocurrir que el instalador haya dejado la contraseña por default.
+- El yacimiento donde se instalan los nodos, es muy vasto y sólo tiene controles de personas en los caminos de acceso principales. No hay videovigilancia en cada AIB. Un intruso no identificado podría acceder a la ubicación del nodo, hacer un relevamiento exhaustivo de su Hw e intentar conectarse por sus interfaces de configuración local (NFC o puerto USB). El software de gestion del nodo se descarga libremente de los Stores de Android e iOS. El firmware está protegido por una contraseña.
 
 #### NS on Premise y Azure cloud 
-- Aplicando técnicas de escaneo activo (por ejemplo wireshark, tcpdump) o aprovechando algún descuido de un empleado que gestione los servicios, el intruso podría obtener las credenciales de una cuenta de usuario de Azure o del NS on premise.  https://attack.mitre.org/techniques/T1595/ https://attack.mitre.org/techniques/T1078/ . 
-También podría encontrarlas al estar guardadas de manera insegura. (Bash history, repositorios, archivos con información de acceso a sistemas, etc.) https://attack.mitre.org/techniques/T1552/
+- Aplicando técnicas de escaneo activo (por ejemplo wireshark, tcpdump) o aprovechando algún descuido de un empleado que gestione los servicios, el intruso detecta una forma de acceder  a información sencible. https://attack.mitre.org/techniques/T1595/ https://attack.mitre.org/techniques/T1078/ . 
+También podría detectar fuentes con información guardada de manera insegura. (Bash history, repositorios, archivos con información de acceso a sistemas, etc.) https://attack.mitre.org/techniques/T1552/
 
 ### Weaponization
 
 #### Nodo: 
-- El atacante planea y prepara una configuración del dispositivo adulterada.
+- El atacante luego de investigar la documentación disponible en la pagina web del fabricante del nodo, recopila el usuario y contraseña por defecto del firmware, además planea y prepara una configuración del dispositivo adulterada.
 
 #### NS on Premise y Azure cloud
-- El atacante identifica una clave de acceso de un usuario de monitoreo y la URL del NS. Requiere acceso desde la red interna de la empresa.
+- El atacante identifica una clave de acceso de un usuario de monitoreo y la URL del NS on premise. Requiere acceso desde la red interna de la empresa.
 - El atacante utiliza una cuenta de usuario y credenciales para acceder a una suscripción y grupo de recursos de Azure donde se despliegan los componentes de la solución. No hace falta tener acceso a la red interna de la compañía, ya que no hay ninguna restricción de acceso al cloud desde internet.
 
 ### Delivery
 
 #### Nodo: 
-- En una nueva visita al sitio, el atacante descarga la nueva configuración por NFC. Consulta los valores de lo sensores (sin mucho sentido ya que está en el lugar y ve el comportamiento del AIB).
+- En una nueva visita al sitio, el atacante prueba la contraseña por defecto con éxito y descarga la nueva configuración por NFC. Consulta los valores de lo sensores (sin mucho sentido ya que está en el lugar y ve el comportamiento del AIB).
 
 #### NS on Premise y Azure cloud 
 - Se despliega un ataque de ransomware mediante una macro incrustada en un email de pishing enviado a un grupo seleccionado de empleados.

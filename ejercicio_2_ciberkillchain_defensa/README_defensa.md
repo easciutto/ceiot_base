@@ -35,11 +35,13 @@ Luego del análisis y evaluación del ataque, genero una acción en conjunto con
 
 ### Respuesta al ataque al ecosistema en Azure Cloud
 
-Se accede mediante una cuenta de administrador principal y se bloquean todos los demás accesos. Se dejan fuera de servicio todos los componentes de la suscripción. Se revisa y audita la base de datos de históricos y ante la comprobación de estár corrupta se define levantarla desde un backup reciente. La auditoría se hace extensiva a toda la gestión de la suscripción de las ultimas semanas, a fin de recabar toda la información posible sobre el ataque.
+Se accede mediante una cuenta de administrador principal (root access) y se bloquean todos los demás accesos. Se dejan fuera de servicio todos los componentes de la suscripción. Se revisa y audita la base de datos de históricos y ante la comprobación de estár corrupta se define levantarla desde un backup reciente. La auditoría se hace extensiva a toda la gestión de la suscripción de las ultimas semanas, a fin de recabar toda la información posible sobre el ataque.
 
 Se depuran los usuarios y credenciales de acceso.
 
 Se revisa la configuración de todos los componentes en el grupo de recursos, en especial las políticas y roles para dejar ajustados los permisos de acceso a lo estrictamente necesario.
+
+Se controla que se cumpla con las recomendaciones del estándar de seguridad para la gestión de identidades y acceso al entorno Cloud SAML 2.0 (Security Assertion Markup Language). En particular la correcta con figuración del Azure AD, la correcta gestión de las credenciales del usuario root (nadie lo debería usar) y la implementación de factor de doble autenticación para usuarios con funciones de mayores privilegios
 
 Se revisa documentación de Microsoft para implementar mejores barreras de protección en la nube https://learn.microsoft.com/en-us/azure/architecture/framework/security/monitor-tools 
 
