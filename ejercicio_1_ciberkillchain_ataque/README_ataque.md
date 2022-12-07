@@ -47,7 +47,7 @@ También podría detectar fuentes con información guardada de manera insegura. 
 - El atacante luego de investigar la documentación disponible en la pagina web del fabricante del nodo, recopila el usuario y contraseña por defecto del firmware, además planea y prepara una configuración del dispositivo adulterada.
 
 #### NS on Premise y Azure cloud
-- El atacante identifica una clave de acceso de un usuario de monitoreo y la URL del NS on premise. Requiere acceso desde la red interna de la empresa.
+- El atacante identifica una cuenta de algunos servicios de monitoreo y archivos no protegidos con información de usuarios y de URL del NS on premise. Requiere acceso desde la red interna de la empresa.
 - El atacante identifica una lista de usuarios con permisos de acceso al la suscripción cloud (grupo de recursos de Azure donde se despliegan los componentes de la solución). No hace falta tener acceso a la red interna de la compañía, ya que no hay ninguna restricción de acceso al cloud desde internet.
 
 ### Delivery
@@ -61,14 +61,14 @@ También podría detectar fuentes con información guardada de manera insegura. 
 ### Explotación
 
 #### NS on Premise y Azure cloud 
-- El atacante modifica el proceso de autenticación, comprometiendo la confidencialidad de las credenciales o bypaseando algunos controles de acceso de sistemas utilizados en el cloud o en sistemas remotos (como ser VPNs y remote desktop)    https://attack.mitre.org/techniques/T1556/
+- El atacante captura información sensible que ingresa un usuario de forma desprevenida en respuesta al email malicioso. Luego hace un intento de replicar el proceso de autenticación, comprometiendo la confidencialidad de las credenciales o bypaseando algunos controles de acceso de sistemas utilizados en el cloud o en sistemas remotos (como ser VPNs y remote desktop)    https://attack.mitre.org/techniques/T1556/
 - También eleva los privilegios del ambiente del dominio modificando la política vigente. (Por ejemplo en el IotHub con la política iothubowner) )https://attack.mitre.org/techniques/T1484/
 - El atacante accede a los dashboards de servicios en el grupo de recursos de Azure para obtener información útil de un entorno operativo,  también ejecuta consultas adicionales y encuentra direcciones IP públicas y puertos abiertos para nuevos ataques. Esto permite que el adversario obtenga información sin realizar ninguna solicitud de API. https://attack.mitre.org/techniques/T1538/
 
 ### Instalation
 
 #### NS on Premise y Azure cloud 
-- Manipulación de cuenta. Sin afectar el acceso de la víctima, el atacante modifica roles y permisos de la cuenta para habilitar el movimiento lateral o tener mayores privilegios para llegar a su objetivo. https://attack.mitre.org/techniques/T1098/
+- Manipulación de cuenta. Sin afectar el acceso de la víctima, el atacante accede y modifica roles y permisos de la cuenta para habilitar el movimiento lateral o tener mayores privilegios para llegar a su objetivo. https://attack.mitre.org/techniques/T1098/
 - El atacante escanea la red en busca de una vulnerabilidad para habilitar servicios remotos y control de escritorio remoto de servidores de la red.
 
 ### Command and Control
