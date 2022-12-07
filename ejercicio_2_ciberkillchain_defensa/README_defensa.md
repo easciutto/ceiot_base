@@ -29,19 +29,19 @@ Reviso los usuarios con rol de administrador. Procedo a revisar el log de login 
 
 Detecto el email malicioso con con la macro de randsomware. Identifico el usuario desprevenido que la ejecutó y desde alli busco reconstruir los pasos seguidos por el atacante. Uso de referencia la guía de Kaspersky de tacticas, técnicas y procedimientos para la defensa ante ataques de randsomware. (securelist.com/modern-randsomware-groups-ttps/106824)
 
-Implemento una nueva política de seguridad que obligue al cambio de contraseñas como mínimo cada 3 meses y mantengo actualizada la lista de administradores.
-
 Luego del análisis y evaluación del ataque, genero una acción en conjunto con el sector de seguridad informática para implementar a la brevedad un software adecuado para detección de anomalías y generación de alertas ante comportamientos fuera de lo común de los administradores.
+
+Implemento una nueva política de seguridad que obligue al cambio de contraseñas como mínimo cada 3 meses y mantengo actualizada la lista de administradores.
 
 ### Respuesta al ataque al ecosistema en Azure Cloud
 
-Se accede mediante una cuenta de administrador principal (root access) y se bloquean todos los demás accesos. Se dejan fuera de servicio todos los componentes de la suscripción. Se revisa y audita la base de datos de históricos y ante la comprobación de estár corrupta se define levantarla desde un backup reciente. La auditoría se hace extensiva a toda la gestión de la suscripción de las ultimas semanas, a fin de recabar toda la información posible sobre el ataque.
+Se accede mediante una cuenta de administrador principal (root access) y se bloquean todos los demás accesos. Se dejan fuera de servicio todos los componentes de la suscripción. Se revisa y audita la base de datos y se compara con copias de backup y ante la comprobación de estár corrupta se define levantarla desde un backup considerado seguro. La auditoría se hace extensiva a toda la gestión de la suscripción de las ultimas semanas, a fin de recabar toda la información posible sobre el ataque.
 
-Se depuran los usuarios y credenciales de acceso.
+Se crean nuevamente los usuarios y se reemplazan las credenciales de acceso.
 
 Se revisa la configuración de todos los componentes en el grupo de recursos, en especial las políticas y roles para dejar ajustados los permisos de acceso a lo estrictamente necesario.
 
-Se controla que se cumpla con las recomendaciones del estándar de seguridad para la gestión de identidades y acceso al entorno Cloud SAML 2.0 (Security Assertion Markup Language). En particular la correcta con figuración del Azure AD, la correcta gestión de las credenciales del usuario root (nadie lo debería usar) y la implementación de factor de doble autenticación para usuarios con funciones de mayores privilegios
+Se controla que se cumpla con las recomendaciones del estándar de seguridad para la gestión de identidades y acceso al entorno Cloud SAML 2.0 (Security Assertion Markup Language). En particular la correcta con figuración del Azure AD, la correcta gestión de las credenciales del usuario root (nadie lo debería usar) y la implementación de factor de doble autenticación para usuarios con funciones de mayores privilegios.
 
 Se revisa documentación de Microsoft para implementar mejores barreras de protección en la nube https://learn.microsoft.com/en-us/azure/architecture/framework/security/monitor-tools 
 

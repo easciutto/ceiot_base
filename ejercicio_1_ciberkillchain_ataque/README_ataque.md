@@ -48,7 +48,7 @@ También podría detectar fuentes con información guardada de manera insegura. 
 
 #### NS on Premise y Azure cloud
 - El atacante identifica una clave de acceso de un usuario de monitoreo y la URL del NS on premise. Requiere acceso desde la red interna de la empresa.
-- El atacante utiliza una cuenta de usuario y credenciales para acceder a una suscripción y grupo de recursos de Azure donde se despliegan los componentes de la solución. No hace falta tener acceso a la red interna de la compañía, ya que no hay ninguna restricción de acceso al cloud desde internet.
+- El atacante identifica una lista de usuarios con permisos de acceso al la suscripción cloud (grupo de recursos de Azure donde se despliegan los componentes de la solución). No hace falta tener acceso a la red interna de la compañía, ya que no hay ninguna restricción de acceso al cloud desde internet.
 
 ### Delivery
 
@@ -56,7 +56,7 @@ También podría detectar fuentes con información guardada de manera insegura. 
 - En una nueva visita al sitio, el atacante prueba la contraseña por defecto con éxito y descarga la nueva configuración por NFC. Consulta los valores de lo sensores (sin mucho sentido ya que está en el lugar y ve el comportamiento del AIB).
 
 #### NS on Premise y Azure cloud 
-- Se despliega un ataque de ransomware mediante una macro incrustada en un email de pishing enviado a un grupo seleccionado de empleados.
+- Se despliega un ataque de ransomware mediante una macro incrustada en un email de pishing enviado a un grupo seleccionado de empleados que tienen cuenta de gesión en el NS y Azure.
 
 ### Explotación
 
